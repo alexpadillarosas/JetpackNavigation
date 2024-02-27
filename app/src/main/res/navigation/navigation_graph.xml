@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.jetpacknavigation.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.jetpacknavigation.ui.main.SecondFragment"
+        android:label="second_fragment"
+        tools:layout="@layout/second_fragment" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.jetpacknavigation.ui.main.ThirdFragment"
+        android:label="third_fragment"
+        tools:layout="@layout/third_fragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.example.jetpacknavigation.ui.main.FourthFragment"
+        android:label="fourth_fragment"
+        tools:layout="@layout/fourth_fragment" >
+        <action
+            android:id="@+id/action_fourthFragment_to_fifthFragment"
+            app:destination="@id/fifthFragment" />
+        <argument
+            android:name="contact"
+            app:argType="com.example.jetpacknavigation.ui.main.Contact" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="com.example.jetpacknavigation.ui.main.FifthFragment"
+        android:label="fifth_fragment"
+        tools:layout="@layout/fifth_fragment" >
+        <action
+            android:id="@+id/action_fifthFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
